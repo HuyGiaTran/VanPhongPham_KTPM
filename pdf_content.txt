@@ -1,0 +1,712 @@
+Số trang: 21
+===== TRANG 1 =====
+TRƯỜNG ĐẠI HỌC SƯ PHẠM THÀNH PHỐ HỒ CHÍ MINH
+KHOA CÔNG NGHỆ THÔNG TIN
+HƯỚNG DẪN
+TIỂU LUẬN CUỐI KỲ
+Bài đánh giá A.2.6 – Trọng số 50%
+COMP1307 – KIỂM THỬ PHẦN MỀM CƠ BẢN
+HọckỳI,nămhọc2026–2027
+Hìnhthức: tiểu luận nhóm (3–5 sinh viên)
+Sảnphẩm: tiểu luận + slide + video demo + hồ sơ kiểm thử +
+kho GitHub
+Khôngtổchứcbáocáotrựctiếp–đánhgiáquahồsơ,videovà
+câuhỏibổsung
+Giảngviên: ThS.LêThanhThoại
+Email: (điền email giảng viên)
+ThànhphốHồChíMinh,2026
+===== TRANG 2 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+Mục lục
+1 Tổng quan về tiểu luận 3
+1.1 Mụcđích . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.2 Thôngtinchung . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.3 Tómtắtnhữngviệcnhómphảilàm . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2 Lộ trình và các mốc thời gian 4
+3 Hướng dẫn chọn đề tài 5
+3.1 Bahướngđềtài . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3.2 Danhsáchđềtàigợiý . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+3.3 Tiêuchímộtđềtàiđạtyêucầu . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+3.4 Quytrìnhđăngkývàduyệtđềtài . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+3.5 YêucầuriêngchohướngC(hệthốngcóAI) . . . . . . . . . . . . . . . . . . . . . 7
+3.6 Quymôtheosốthànhviên . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+4 Hướng dẫn thực hiện: 8 bước 8
+5 Sản phẩm phải nộp 11
+6 Cấu trúc tiểu luận 12
+6.1 Địnhdạngtrìnhbày . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+7 Slide và video demo (thay cho báo cáo trực tiếp) 13
+7.1 Slide . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+7.2 Videodemo . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+8 Yêu cầu kho GitHub 14
+9 Sử dụng AI trong tiểu luận 14
+10 Đánh giá 15
+10.1 Rubric(theođềcương,thang10) . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+10.2 Nguồnminhchứngchotừngtiêuchí . . . . . . . . . . . . . . . . . . . . . . . . . 15
+10.3 Điểmcánhân . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+10.4 Câuhỏibổsungthaychohỏiđáptrựctiếp . . . . . . . . . . . . . . . . . . . . . . 16
+1
+===== TRANG 3 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+10.5 Trừđiểmvàcáctrườnghợpđặcbiệt . . . . . . . . . . . . . . . . . . . . . . . . . 16
+11 Liêm chính học thuật và đạo đức kiểm thử 16
+12 Câu hỏi thường gặp 17
+Phụ lục 18
+Phụlục1. Phiếuđăngkýđềtài . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+Phụlục2. Bảngđónggópvàđánhgiáchéo . . . . . . . . . . . . . . . . . . . . . . . . 19
+Phụlục3. Mẫuphảntưcánhân . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+Phụlục4. Checklisttrướckhinộp . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+2
+===== TRANG 4 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+1.Tổng quan về tiểu luận
+1.1. Mục đích
+Tiểuluậncuốikỳgiúpsinhviên thực hiện trọn vẹn một quy trình kiểm thử chomộtứngdụng
+phần mềm thực tế: từ phân tích yêu cầu, lập kế hoạch, thiết kế ca kiểm thử bằng các kỹ thuật đã
+học,thựcthithủcôngvàtựđộng,quảnlýlỗi,đếnbáocáokếtquả. ĐâylàbàiđánhgiáA.2.6trong
+đềcương,đomứcđạthaichuẩnđầura:
+CLO Nội dung chuẩn đầu ra Trọng số
+trong A.2.6
+CLO2 Xâydựngđượccáccakiểmthửdựatrênyêucầuphầnmềm,xác
+địnhdữliệukiểmthử,điềukiệnkiểmthửvàkếtquảmongđợi.40%
+CLO3 Vậndụngđượccáckỹthuậtkiểmthửhộpđen,hộptrắngvàkiểm
+thửhồiquyđểthựchiệnkiểmthửvàghinhậnkếtquảkiểmthử
+đốivớiứngdụngthựctế.60%
+1.2. Thông tin chung
+Hạng mục Quy định
+Trọngsố 50%điểmhọcphần(đánhgiácuốikỳ)
+Nhóm 3–5sinhviên,tựlậpnhómtừBuổi2
+Hìnhthức Tiểuluậnkèmhồsơkiểmthử; không báo cáo trực tiếp
+Thaychobáocáo Slidecóghichúthuyếtminh+videodemo8–12phút+trảlờicâu
+hỏibổsungcủagiảngviên(mục 10.4)
+Đăngkýđềtài trướcBuổi4
+Mốckiểmtratiếnđộ Buổi7
+Hạnnộpcuốicùng 23:59,7ngàysauBuổi10
+Nơinộp LMScủahọcphần(mộtthànhviênđạidiệnnộp)
+1.3. Tóm tắt những việc nhóm phải làm
+1.Chọnvàđăngkýđềtài(mục 3).
+2.Thựchiệnkiểmthửtheo8bước(mục 4),lưulạiminhchứngtrongsuốtquátrình.
+3.Nộp 7 sản phẩm (mục 5): tiểu luận, slide, video, tệp Excel kiểm thử, kho GitHub, phụ lục sử
+dụngAI,bảngđónggóp.
+4.Trảlờicâuhỏibổsungcủagiảngviên(nếuđượcyêucầu)trong48giờ.
+3
+===== TRANG 5 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+2.Lộ trình và các mốc thời gian
+Tiểuluậnđượcthựchiệnsongsongvớinộidungcácbuổihọc. Mỗibuổihọcxonglàápdụngngay
+vàođềtàicủanhóm.
+Buổi 2
+Lập nhóm,
+tạo GitHubBuổi 3–4
+Đăng ký đề tài,
+kế hoạch nhápBuổi 4–6
+Đặc tả, ca
+kiểm thử vòng 1Buổi 7
+Mốc kiểm tra
+tiến độ
+Buổi 7–8
+Hộp đen,
+hộp trắngBuổi 9
+Unit test,
+CIBuổi 10
+UI/API tự động,
+video+7 ngày
+Nộp hồ sơ
+cuối cùng
+Thời điểm Nhóm cần hoàn thành Nộp gì
+Buổi2 Lậpnhóm,phânvai,tạokhoGitHub(bảngcông
+việc,nhãnlỗi,README)LinkkhoGitHub
+trướcBuổi
+4Chọnđềtài,viếtphiếuđăngký(Phụlục1),kế
+hoạchkiểmthửnhápPhiếuđăngkýđềtài
+Buổi4–6 Đặctảyêucầu,điềukiệnkiểmthử,cakiểmthử
+vòng1,báocáolỗiđầutiên–(cậpnhậttrênGitHub)
+Buổi 7 Mốc tiến độ: kếhoạch,đặctả, ≥50%sốcakiểm
+thử,matrậntruyvếtsơbộTệpExcel+kếhoạch
+(PDF)
+Buổi7–8 Hoànthiệnkỹthuậthộpđen;phântíchhộptrắng
+cho≥2hàm–
+Buổi9 Kiểmthửđơnvị(JUnit/NUnit/pytest…),đưavào
+CI–
+Buổi10 Kiểmthửtựđộnggiaodiện/API,hồiquy,báocáo
+hoàntất,slide,video–
+Hạn cuối Toànbộhồsơ(mục 5) Tệpnén+linkvideo,
+GitHub
+Về mốc tiến độ Buổi 7
+Mốctiếnđộ không chấm điểm riêng ,giảngviêndùngđểgópýsớm. Nhómkhôngnộpmốc
+tiếnđộbịtrừ 0,5 điểmtrênthang10củatiểuluận. Nhómnộpđúngmốcđượcnhậnnhậnxét
+đểsửatrướckhinộpbảncuối.
+4
+===== TRANG 6 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+3.Hướng dẫn chọn đề tài
+3.1. Ba hướng đề tài
+Nhóm chọn mộttrong ba hướng dưới đây. Mỗi hướng có cùng khung yêu cầu nhưng trọng tâm
+khácnhau.
+Hướng Mô tả Phù hợp với nhóm
+A. Kiểm thử
+ứng dụng có
+sẵnKiểmthửmộtứngdụngweb/diđộng
+cósẵnmànhóm được phép kiểm
+thử: trangluyệntập,mãnguồnmở
+tựcàiđặttrênmáy. Phầnhộptrắng
+thựchiệntrênmộtsốhàmnghiệpvụ
+nhómtựviếtlạimôphỏng.Muốntậptrungvàokiểmthửhệ
+thống,giaodiện;kỹnănglậptrình
+vừaphải.
+B. Tự xây
+dựng rồi kiểm
+thửTựcàiđặtmộtphầnứngdụngnhỏ
+(vídụEduRegtheoPhụlụcAgiáo
+trình,ứngdụngthưviện,đặtvé)rồi
+kiểmthử. Cómãnguồnđầyđủnên
+làmhộptrắng,độbaophủthuậnlợi.Lậptrìnhkhá;muốncósảnphẩm
+hoànchỉnhchoportfolio.
+C. Kiểm thử
+hệ thống có AIKiểmthửmộtchatbot/ứngdụngdùng
+môhìnhngônngữdonhómtựdựng
+(quaAPI).Trọngtâm: kiểmthửtheo
+thuộctính,ảogiác,promptinjection,
+hồiquyvớibộcâuhỏichuẩn.QuantâmAI;chấpnhậnyêucầu
+riêngởmục 3.5.
+3.2. Danh sách đề tài gợi ý
+STT Đề tài Hướng Đối tượng kiểm thử, gợi ý trọng tâm
+1 Kiểmthửứngdụng
+thươngmạiđiệntửmẫuA SwagLabs(saucedemo.com): đăngnhập,
+sắpxếp,giỏhàng,thanhtoán;sosánhhành
+vigiữacáctàikhoảncàisẵnlỗi
+2Kiểmthửhệthốngquản
+lýnhânsựA OrangeHRMmãnguồnmởcàicụcbộ
+(Docker): quảnlýnhânviên,nghỉphép,
+phânquyền
+3 Kiểmthửbiểumẫuvà
+thànhphầnwebA DemoQA,TheInternet(herokuapp): biểu
+mẫu,bảng,tảitệp,cửasổ,cảnhbáo
+4Kiểmthửứngdụngmã
+nguồnmởtựchọnA VídụWordPress,Moodle,Odoo(càicục
+bộ);chọn3–4chứcnăngchính
+5 Hệthốngđăngkýhọc
+phầnEduRegB CàiđặtR01–R07(PhụlụcAgiáotrình);
+trọngtâmràngbuộctínchỉ,họcphí,quy
+đổiđiểm
+5
+===== TRANG 7 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+STT Đề tài Hướng Đối tượng kiểm thử, gợi ý trọng tâm
+6Ứngdụngquảnlýthư
+việnB Mượn–trả,hạntrả,tiềnphạtquáhạn,giới
+hạnsốsáchtheoloạithẻ
+7 DịchvụAPIđặtvéxe/
+xemphimB RESTAPI:tìmchuyến,giữchỗ,hủyvé,
+hoàntiềntheothờiđiểmhủy;kiểmthửAPI
+bằngPostman/RESTAssured
+8Ứngdụngquảnlýchitiêu
+cánhânB Danhmục,hạnmức,cảnhbáovượtngân
+sách,thốngkêtháng
+9 Tínhphígiaohàng/
+khuyếnmãiB Bảnggiátheokhốilượng,khoảngcách,
+hạngthànhviên,mãgiảmgiá–rấtgiàugiá
+trịbiênvàbảngquyếtđịnh
+10Chatbottưvấntuyểnsinh
+/họcvụC Chatbotdựatrêntàiliệuquychế;kiểmthử
+độchínhxác,ảogiác,câuhỏibẫy,chống
+promptinjection
+11 TrợlýAIsinhcâuhỏi
+trắcnghiệmC Kiểmthửchấtlượngđầuratheorubric,đáp
+ánđúng,địnhdạng,tínhổnđịnhgiữacác
+lầnchạy
+12Đềtàitựđềxuất A/B/C Phảiđápứngtiêuchíởmục 3.3vàđược
+giảngviênduyệt
+3.3. Tiêu chí một đề tài đạt yêu cầu
+Đề tài được duyệt khi thỏa mãn cả 6 tiêu chí
+1.Được phép kiểm thử: ứngdụngdonhómtựxâydựng,mãnguồnmởchạytrênmáynhóm,
+hoặctrangwebdànhcholuyệntậpkiểmthử.
+2.Đủ chức năng: cóítnhất 4 chức năng cóthểkiểmthử,trongđóítnhất1chứcnăngcóquy
+tắcnghiệpvụ(tínhtoán,giớihạn,điềukiệnkếthợp).
+3.Có giá trị biên: cótrườngdữliệudạngsố,độdài,ngàytháng,sốlượng…đểápdụngphân
+lớptươngđươngvàgiátrịbiên.
+4.Có trạng thái hoặc tổ hợp điều kiện: đểápdụngbảngquyếtđịnhhoặcchuyểntrạngthái.
+5.Tự động hóa được: cógiaodiệnwebhoặcAPIđểviếtkịchbảnkiểmthửtựđộng;có(hoặc
+nhómtựviết)mãnguồnđểkiểmthửđơnvị.
+6.Không trùng: khôngtrùngđềtàivàđốitượngkiểmthửvớinhómkháctronglớp(riêngđề
+tài1–3chophéptốiđa2nhómnhưngphảikhácchứcnăngtrọngtâm).
+Đề tài không được chấp nhận
+•Kiểmthửwebsite,ứngdụngthậtcủatổchứckhác(ngânhàng,sànthươngmạiđiệntử,cổng
+thôngtincủatrường…)khikhôngcóvănbảnchophép.
+•Chạy công cụ kiểm thử tải (JMeter, k6), quét bảo mật (OWASP ZAP, Burp) vào hệ thống
+6
+===== TRANG 8 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+khôngthuộcquyềncủanhóm.
+•Ứng dụng quá đơn giản (chỉ một biểu mẫu, không có quy tắc nghiệp vụ) hoặc chỉ là trang
+tĩnh.
+•Sửdụnglạinguyênđồán,tiểuluậncủanhómkháchoặckhóatrước.
+3.4. Quy trình đăng ký và duyệt đề tài
+1.Nhómthảoluận,chọn1đềtàichínhvà1đềtàidựphòng.
+2.Điền phiếu đăng ký đề tài (Phụlục1),nộptrướcBuổi4.
+3.Giảng viên phản hồi trong 3 ngày: Duyệt/Duyệt có điều chỉnh (thu hẹp, mở rộng phạm vi) /
+Không duyệt (chuyểnsangđềtàidựphòng).
+4.Saukhiđượcduyệt,chỉđượcđổiđềtàikhicólýdochínhđángvàtrướcBuổi7.
+3.5. Yêu cầu riêng cho hướng C (hệ thống có AI)
+•NhómtựxâydựngứngdụnggọiAPImôhìnhngônngữ(dùnggóimiễnphíhoặckhóaAPIcủa
+nhóm; khôngđưakhóaAPIlênGitHub–dùngbiếnmôitrường/GitHubSecrets).
+•Thayyêucầu“hộptrắngcho2hàm”bằng: hộptrắngcho 1 hàmxửlýđầuvào/đầura(lọc,kiểm
+trađịnhdạng,tínhtoán)và bộ câu hỏi chuẩn ≥40câucóđápánthamchiếu.
+•Bắt buộc có: kiểm thử theo thuộc tính, chạy lặp mỗi câu ≥3 lần để đo tỷ lệ đạt, ≥10 câu hỏi
+bẫy(ảogiác,ngoàiphạmvi), ≥5capromptinjection.
+•Khôngđưadữliệucánhânthậtvàoprompthoặctàiliệuchochatbot.
+3.6. Quy mô theo số thành viên
+Yêu cầu tối thiểu 3 SV 4 SV 5 SV
+Chứcnăngđượckiểmthử 4 5 6
+Cakiểmthử(thủcông,mứcthấp) 60 80 100
+TrườngdữliệuápdụngEP+BVA 2 3 4
+Kỹthuậthộpđenkhác(bảngquyếtđịnh/chuyển
+trạngthái)1 2 2
+Hàmphântíchhộptrắng(CFG,V(G),đườngcơsở) 2 2 3
+Kiểmthửđơnvịtựđộng 15 20 25
+Kịchbảntựđộnggiaodiện/API 8 10 12
+Báocáolỗicóminhchứng 5 7 10
+7
+===== TRANG 9 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+Lưu ý
+Đâylàsốlượng tối thiểu. Chấtlượngquantrọnghơnsốlượng: 60cakiểmthửcókỹthuậtrõ
+ràng,kếtquảmongđợicụthểđượcđánhgiácaohơn150catrùnglặp. Nếuứngdụngkhông
+tìmthấyđủlỗithật,nhómghinhậntrungthựcvàtrìnhbàybằngchứngđãkiểmthửkỹ– không
+bịa lỗi.
+4.Hướng dẫn thực hiện: 8 bước
+1. Tìm hiểu ứng dụng 2. Đặc tả yêu cầu 3. Kế hoạch 4. Thiết kế ca
+5. Hộp trắng 6. Thực thi, báo lỗi 7. Tự động, hồi quy 8. Báo cáo, video
+Mỗibướcdướiđâytrìnhbày: mục tiêu – việc cần làm – sản phẩm – chương liên quan – lỗi thường
+gặp.
+Bước 1. Tìm hiểu ứng dụng (Buổi2–3)
+Mục tiêu: hiểuứngdụnglàmgì,aidùng,rủiroởđâu.
+•Càiđặt/chạyứngdụngtrênmáynhóm;ghilạiphiênbản,môitrường(hệđiềuhành,trìnhduyệt,
+CSDL).
+•Dùng thử như người dùng thật (kiểm thử thăm dò 30–45 phút mỗi người), ghi chú các luồng
+chínhvàđiểmđángngờ.
+•Vẽsơđồchứcnănghoặcsơđồluồngnghiệpvụ.
+Sản phẩm: môtảứngdụng(1–2trang),ảnhchụpmànhìnhchính,sơđồchứcnăng. Chương 1, 2
+Bước 2. Viết đặc tả yêu cầu (Buổi3–4)
+Mục tiêu: cócơ sở kiểm thử –khôngcóyêucầuthìkhôngbiếtkếtquảnàolàđúng.
+•Nếuứngdụngcótàiliệu: tómtắt,đánhmãyêucầu(R01,R01.1…).
+•Nếukhôngcó(hướngAthườnggặp): viết đặc tả giả định dựatrênhànhviquansátđượccủa
+bản“chuẩn”(vídụ standard_user )vàghirõlàgiảđịnh.
+•Mỗiyêucầuphải kiểm chứng được : cóconsố,giớihạn,thôngbáocụthể.
+•Ràsoátđặctả(kiểmthửtĩnh): liệtkêđiểmmơhồ,câuhỏilàmrõ.
+8
+===== TRANG 10 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+Sản phẩm: bảngyêucầuchứcnăng+phichứcnăng,danhsáchcâuhỏilàmrõ. Chương 1, 4;
+Phụ lục A giáo trình
+Yêu cầu tốt và chưa tốt
+Chưa tốt: “Hệthốngchophépđăngkýhọcphầnhợplệ.”
+Tốt:“R04.1–Tổngtínchỉsaukhiđăngkýphảitừ14đến25; nếuvượt25,hệthốngtừchối
+vàhiểnthị‘Vượtquá25tínchỉ’.”
+Bước 3. Lập kế hoạch kiểm thử (Buổi3)
+•DùngmẫuB.1tronggiáotrình: phạmvi trong/ngoài (kèmlýdo),mụctiêuđođược,cáchtiếp
+cận(mức,loại,kỹthuật,côngcụ),tiêuchíđầuvào/đầura,môitrường,phâncông,lịchtrình.
+•Phântích rủi ro sản phẩm và dự án : tốithiểu6rủiro,chấmkhảnăng×ảnhhưởng(thang1–5),
+vẽmatrậnnhiệt;ưutiênkiểmthửtheorủiro.
+•Ướclượngnỗlựccho3côngviệcchínhbằng ước lượng ba điểm .
+Sản phẩm: kếhoạchkiểmthử(5–8trang). Chương 3
+Bước 4. Thiết kế ca kiểm thử (Buổi4–7)
+1.Từmỗiyêucầu,rútra điều kiện kiểm thử (tíchcực,tiêucực,biên,bảomật).
+2.Ápdụngkỹthuậtvà trình bày rõ cách áp dụng trongtiểuluận:
+•EP:bảnglớphợplệ/khônghợplệ,giátrịđạidiện;mỗicachỉmộtlớpkhônghợplệ.
+•BV A:xácđịnhbước δ,liệtkêgiátrịbiên(2hoặc3giátrị).
+•Bảng quyết định và/hoặc chuyển trạng thái : bảng đầy đủ, rút gọn, ca kiểm thử tương
+ứng.
+•Kinh nghiệm: đoánlỗi, ≥2phiênkiểmthửthămdòcóđiềulệ.
+3.Viết ca kiểm thử mức thấp trong tệp Excel mẫu: mã, tiêu đề, mã yêu cầu, ưu tiên, tiền điều
+kiện,dữliệucụthể,cácbước,kếtquảmongđợicụthể.
+4.Lậpma trận truy vết : mọiyêucầucó ≥1cakiểmthử.
+5.Reviewchéotrongnhómbằngchecklistmục4.6.3giáotrình.
+Sản phẩm: sheetTestCase,RTMtrongtệpExcel;mụcthiếtkếtrongtiểuluận. Chương 4, 7
+Lỗi thường gặp ở bước 4
+Chỉ viết ca “đường hạnh phúc”; kết quả mong đợi mơ hồ (“thành công”, “báo lỗi”); viết kết
+quảmongđợi sau khichạytheohànhvihệthống;mộtcakiểmtranhiềuchứcnăng;thiếudữ
+liệucụthể;khônggắnmãyêucầu.
+9
+===== TRANG 11 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+Bước 5. Kiểm thử hộp trắng (Buổi8)
+•Chọn≥2 hàm/phương thức có logic nghiệp vụ (tính phí, kiểm tra điều kiện, xếp loại…). Với
+hướngA,nhóm tự viết lại hàmmôphỏngquytắcnghiệpvụcủaứngdụng.
+•Vớimỗihàm: mãnguồncóđánhsốnút,vẽ CFG,tính V(G)bằng2cách,liệtkê tập đường cơ
+sở,dữliệuvàkếtquảmongđợi(lấytừđặctả).
+•Nếucóđiềukiệnghép: thiếtkếthêmcađạtMC/DC.Nếucóvònglặp: ápdụngkiểmthửvòng
+lặp.
+•Đođộbaophủbằngcôngcụ(JaCoCo,Coverlet,coverage.py,Istanbul);mụctiêu ≥80%nhánh
+chocáchàmnày.
+Sản phẩm: mụchộptrắngtrongtiểuluận,ảnhbáocáođộbaophủ. Chương 8
+Bước 6. Thực thi và quản lý lỗi (Buổi5–10)
+•Thựcthitoànbộcakiểmthử,ghi kết quả thực tế ,trạngthái(Pass/Fail/Blocked/Notrun),người
+chạy,ngày,phiênbản.
+•Mỗi ca Fail →mộtbáo cáo lỗi trên GitHub Issues/Jira theo mẫu (issue form): tiêu đề rõ, môi
+trường,bướctáihiện,mongđợi,thựctế,tầnsuất,severity,priority,ảnh/video.
+•Môphỏngvòngđờilỗi(gắnnhãn status:fixed ,status:retest …)và kiểm thử xác nhận .
+•Vớilỗinghiêmtrọngnhất: phântíchnguyênnhângốc(5Whys).
+Sản phẩm: sheetnhậtkýthựcthi,issuetrênGitHub,mụcbáocáolỗitrongtiểuluận. Chương 5
+Bước 7. Kiểm thử tự động và hồi quy (Buổi9–10)
+•Kiểm thử đơn vị: JUnit5/NUnit/pytestchocáchàmởbước5vàcácquytắcnghiệpvụ;dùng
+kiểmthửthamsốhóavớidữliệuEP/BVA;dùngmockkhicần.
+•Kiểm thử giao diện/API: Selenium,Playwright,KatalonhoặcPostman/Newman;dùnglocator
+ổnđịnhvàPageObject.
+•CI:GitHubActionschạykiểmthửmỗilầnpush/pullrequest;lưubáocáokiểmthửlàmartifact.
+•Hồi quy:mô tả ít nhất một lầnthay đổi (sửa lỗi, đổi mã, cập nhật) và kết quả chạy lại bộ hồi
+quytrước/sau(ảnhCIxanh/đỏ).
+Sản phẩm: mãkiểmthửtrongkhoGitHub,ảnhCI,mụctựđộnghóatrongtiểuluận. Chương 6,
+9, 10
+10
+===== TRANG 12 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+Bước 8. Báo cáo, slide và video (Buổi10–hạnnộp)
+•Viết báo cáo hoàn tất kiểm thử (mẫu B.5): bảng kết quả, biểu đồ, đánh giá từng tiêu chí đầu
+ra,rủirocònlại,khuyếnnghị,bàihọc.
+•Hoànthiệntiểuluận,slide,quayvideo(mục 7).
+•HoànthiệnphụlụcAI,bảngđónggóp;kiểmtralạitheochecklist(Phụlục4).
+5.Sản phẩm phải nộp
+# Sản phẩm Yêu cầu Định dạng
+1 Tiểuluận 25–40trangnộidungchính(khôngtínhphụ
+lục),cấutrúcmục 6,địnhdạngmục 6.1PDF+
+DOCX/TEX
+2Slide 15–25slide; mỗi slide có ghi chú thuyết minh ;
+ghitênngườiphụtráchtrênslidePPTX+PDF
+3 Videodemo 8–12phút;mỗithànhviêntrìnhbàyphầnmình;
+códemochạykiểmthửtựđộngLink
+YouTube
+(khôngcông
+khai)/Drive
+4Hồsơkiểmthử TệpExcelmẫu: TestCase,RTM,BaoCaoLoi,
+RuiRo,UocLuong,TongKetXLSX
+5 KhoGitHub Mãkiểmthử,CI,issue,README(mục 8);
+mờigiảngviênlàmcộngtácviênLink
+6PhụlụcsửdụngAI MẫuB.6giáotrình(mục 9) Trongtiểu
+luận
+7 Bảngđónggóp Việctừngthànhviênlàm,%đónggóp,chữ
+ký/xácnhận;đánhgiáchéo(Phụlục2)Trongtiểu
+luận
+Cách nộp và đặt tên
+Néntoànbộthànhmộttệp .zip,tên: COMP1307_Nhom<số>_<TenDeTaiKhongDau>.zip . Cấutrúc
+bêntrong:
+COMP1307_Nhom05_SwagLabs/
+|‐‐ 1_TieuLuan_Nhom05.pdf (+ .docx hoặc thư mục .tex)
+|‐‐ 2_Slide_Nhom05.pptx (+ .pdf)
+|‐‐ 3_Video_link.txt (link video + link GitHub)
+|‐‐ 4_HoSoKiemThu_Nhom05.xlsx
+|‐‐ 5_MinhChung/ (ảnh, video ngắn, log, báo cáo CI)
+`‐‐ 6_DongGop_DanhGiaCheo.pdf
+11
+===== TRANG 13 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+6.Cấu trúc tiểu luận
+Phần Nội dung bắt buộc Gợi ý số
+trang
+Bìa,mụclục Tênđềtài,nhóm,thànhviên(MSSV),
+giảngviên,linkGitHub,linkvideo–
+1. Giớithiệu Ứngdụng,lýdochọn,phạmvi,môi
+trường,phâncôngtómtắt2–3
+2. Đặctảyêucầu Bảngyêucầu(mãR…),yêucầuphichức
+năng,câuhỏilàmrõ3–4
+3. Kếhoạchkiểmthử Phạmvi,mụctiêu,cáchtiếpcận,tiêuchí,
+rủiro(matrận),ướclượng,lịch4–6
+4. Thiếtkếkiểmthử Điềukiệnkiểmthử;EP,BVA,bảngquyết
+định/chuyểntrạngthái(cóbảng,giải
+thích);tríchbộcakiểmthửtiêubiểu;ma
+trậntruyvết6–9
+5. Kiểmthửhộptrắng Mã,CFG,V(G),đườngcơsở,MC/DC
+(nếucó),độbaophủ3–5
+6. Thựcthivàkếtquả ThốngkêPass/Fail/Blockedtheochức
+năng,biểuđồ;kiểmthửthămdò2–3
+7. Quảnlýlỗi 5–10lỗitiêubiểuđầyđủtrường;
+severity/priority;vòngđời;5Whys3–4
+8. Kiểmthửtựđộngvàhồi
+quyCôngcụ,cấutrúcmã,PageObject,CI,kết
+quảhồiquytrước/sau3–4
+9. Báocáohoàntất Mứcđạttiêuchíđầura,rủirocònlại,
+khuyếnnghịpháthành1–2
+10. Kếtluận,bàihọc Điềulàmtốt,hạnchế,bàihọcvềkiểmthử
+vàvềviệcdùngAI1
+Tàiliệuthamkhảo Trìnhbàynhấtquán(APAhoặcIEEE) –
+Phụlục A.SửdụngAI;B.Bảngđónggóp,đánh
+giáchéo;C.Phảntưcánhân;D.Toànbộ
+cakiểmthử(nếudài)–
+6.1. Định dạng trình bày
+•KhổA4;lềtrái3cm,phải2cm,trên/dưới2cm;TimesNewRoman13;giãndòng1,2–1,5;đánh
+sốtrang.
+•Bảng,hìnhcósốthứtựvàchúthích;mãnguồndùngphôngđơncách(Consolas,Courier).
+•Thuật ngữ tiếng Anh để trong ngoặc ở lần đầu, ví dụ “phân tích giá trị biên (Boundary Value
+Analysis–BVA)”.
+12
+===== TRANG 14 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+•ĐượcviếtbằngWordhoặcLaTeX;nộpkèmtệpnguồn.
+7.Slide và video demo (thay cho báo cáo trực tiếp)
+7.1. Slide
+•15–25 slide, bố cục gợi ý: (1) đề tài, nhóm; (2) ứng dụng và phạm vi; (3) rủi ro và kế hoạch;
+(4–8) thiết kế ca kiểm thử với các kỹ thuật; (9–10) hộp trắng; (11–13) kết quả, lỗi tiêu biểu;
+(14–16)tựđộnghóa,CI,hồiquy;(17)báocáohoàntất;(18)bàihọc,AI.
+•Mỗi slide có ghi chú thuyết minh (speakernotes)50–150từ–giảngviênđọcghichúkhichấm,
+thaycholờithuyếttrình.
+•Gócmỗislideghi tên người phụ trách nộidungđó.
+•Hạnchếchữ;ưutiênbảng,sơđồ,ảnhchụpminhchứng.
+7.2. Video demo
+•Dài8–12 phút,quaymànhìnhkèmlờithuyếtminhtheoslide(OBSStudio,PowerPointRecord-
+ing,Loom…).
+•Mỗi thành viên tự trình bày phần mình làm (có mặt qua webcam hoặc giọng nói; hiện tên
+trênmànhìnhkhichuyểnngười).
+•Bắtbuộccóđoạn demo trực tiếp : chạybộkiểmthửtựđộng(đơnvịvàgiaodiện/API),chothấy
+kếtquảđạt/khôngđạt;mởmộtissuelỗivàtáihiệnlỗiđó.
+•ĐăngYouTubechếđộ Không công khai (Unlisted)hoặcGoogleDrive(mởquyềnxemchogiảng
+viên).
+Video không thay thế tiểu luận
+Videochứngminhsảnphẩmcóthậtvàtừngthànhviênhiểuphầnmìnhlàm. Nộidungchitiết
+vẫnphảicótrongtiểuluậnvàhồsơkiểmthử.
+13
+===== TRANG 15 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+8.Yêu cầu kho GitHub
+<ten‐kho>/
+|‐‐ README.md mô tả, cách cài đặt, cách chạy kiểm thử
+|‐‐ app/ (hướng B, C) mã ứng dụng
+|‐‐ tests/
+| |‐‐ unit/ JUnit / NUnit / pytest
+| |‐‐ ui/ hoặc api/ Selenium / Playwright / Postman
+| `‐‐ data/ CSV dữ liệu kiểm thử
+|‐‐ docs/ kế hoạch, tệp Excel, báo cáo
+`‐‐ .github/
+|‐‐ workflows/ci.yml chạy kiểm thử mỗi push / PR
+`‐‐ ISSUE_TEMPLATE/ mẫu báo cáo lỗi
+•README đủđểngườikhácchạylạikiểmthửtrênmáymới(phiênbảnJDK/.NET/Node,lệnh
+càiđặt,lệnhchạy).
+•Lịch sử commit thểhiệnquátrìnhlàmviệcđềuđặncủacácthànhviên;mỗingườicommitphần
+mìnhphụtrách.
+•Issue: dùngnhãnseverity,priority,trạngthái;liênkếtcommitsửalỗivớiissue( fixes #12 ).
+•Bảo mật: khôngđưamậtkhẩu,khóaAPI,dữliệucánhânlênkho(dùng .gitignore ,biếnmôi
+trường,GitHubSecrets).
+•Mờigiảngviênlàmcộngtácviên(hoặcđểkhocôngkhainếunhómđồngý).
+9.Sử dụng AI trong tiểu luận
+3Được phép (phải khai báo) 7Không được phép
+Gợiýđiềukiệnkiểmthử,cakiểmthử,dữliệu
+kiểmthử–sauđónhómreviewvàchỉnhsửaNộpnguyênvănđầuracủaAImàkhông
+kiểmtra
+Hỗtrợviếtmãkiểmthử,giảithíchlỗibiên
+dịchĐểAIviếtkếtquảmongđợitheohànhvicủa
+mãthayvìđặctả
+Tómtắt,chỉnhsửacâuchữtrongbáocáo Đưadữliệucánhân,tàiliệunộibộ,khóaAPI
+lêncôngcụAIcôngcộng
+Gợiýrủiro,gópýkếhoạchkiểmthử DùngAItạominhchứnggiả(ảnh,log,kết
+quảchạykhôngcóthật)
+Phụ lục sử dụng AI (mẫuB.6)ghichomỗilầndùngđángkể: côngcụ(tên,phiênbản),mụcđích,
+promptchính(tómtắt),đầurađượcdùngởđâu,nhómđãkiểmtra/sửagì,ngườichịutráchnhiệm.
+Nhóm ghi thêm ít nhất 2 ví dụ AI trả lời sai hoặc thiếu và cách nhóm phát hiện – đây là minh
+chứngnănglựckiểmthử,đượcghinhậnkhichấm.
+14
+===== TRANG 16 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+10.Đánh giá
+10.1. Rubric (theo đề cương, thang 10)
+Tiêu chí (2
+điểm)CLO Mức 1
+(0–0,6)Mức 2
+(0,6–1,0)Mức 3
+(1,0–1,6)Mức 4
+(1,6–2,0)
+Xâydựngcakiểm
+thửphùhợpvớiyêu
+cầu2Chưaphùhợp
+hoặcsailệch
+đángkểMộtsốca,
+thiếutrường
+hợpquantrọngPhùhợp,bao
+quátphầnlớn
+yêucầuĐầyđủ,rõ
+ràng,cóhệ
+thống,baoquát
+tốt
+Dữliệu,điềukiện
+kiểmthử,kếtquả
+mongđợi2Saiphầnlớn Mộtphần,còn
+thiếu/chưa
+chínhxácTươngđốiđầy
+đủ,chínhxácĐầyđủ,chính
+xác,nhấtquán
+Vậndụnghộpđen,
+hộptrắng,hồiquy3Chưađúngkỹ
+thuậtMộtsốkỹ
+thuật,cònsai
+sótĐúngtrong
+phầnlớn
+trườnghợpHiệuquả,cócơ
+sởchotừng
+trườnghợp
+Thựchiệnkiểmthử,
+pháthiệnkếtquả/lỗi3Saiquytrình,
+thiếutincậyMộtphần,còn
+saisótĐúngphầnlớn,
+pháthiệnphần
+lớnlỗiChínhxác,có
+hệthống,lỗi
+quantrọng
+Ghinhận,tổnghợp,
+trìnhbàykếtquả3Thiếuthông
+tin,thiếuminh
+chứngMộtphần,minh
+chứngchưarõTươngđốiđầy
+đủ,cóminh
+chứngĐầyđủ,cấu
+trúcrõ,minh
+chứngthuyết
+phục
+10.2. Nguồn minh chứng cho từng tiêu chí
+Tiêu chí Giảng viên xem ở đâu
+Cakiểmthửphùhợpyêucầu Tiểuluậnmục2,4;sheetTestCase,RTM
+Dữliệu,điềukiện,mongđợi SheetTestCase;bảngEP/BVA,bảngquyếtđịnh
+Vậndụnghộpđen,hộptrắng,
+hồiquyTiểuluậnmục4,5,8;mãkiểmthử;báocáobaophủ
+Thựchiện,pháthiệnlỗi Nhậtkýthựcthi;issueGitHub;CI;videodemo
+Ghinhận,trìnhbày Tiểuluậnmục6–9;slidevàghichú;video
+10.3. Điểm cá nhân
+Điểmcánhân =min(
+10;Điểmnhóm ×k)
+, k ∈[0,7; 1 ,1]
+Hệ số đóng góp kđược xác định từ: bảng đóng góp và đánh giá chéo, lịch sử commit/issue trên
+GitHub,phầntrìnhbàycủatừngngườitrongvideo,vàcâutrảlờicâuhỏibổsung(nếucó). Mặc
+định k= 1 ,0khicácnguồnthốngnhấtvàđónggópcânđối.
+15
+===== TRANG 17 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+10.4. Câu hỏi bổ sung thay cho hỏi đáp trực tiếp
+Giảngviêncóthểápdụngmộthoặckếthợpcáchìnhthứcsau:
+1.Phản tư cá nhân (bắt buộc): mỗi sinh viên viết 1 trang (Phụ lục 3): việc mình làm, một kỹ
+thuậtmìnhápdụngvàvìsao,mộtlỗimìnhpháthiệnvàcáchtáihiện.
+2.Câu hỏi viết theo nhóm: sau khi xem hồ sơ, giảng viên gửi 2–3 câu hỏi riêng; nhóm trả lời
+bằngvănbảnhoặcvideongắntrong 48 giờ.
+3.Vấn đáp trực tuyến ngẫu nhiên: 5–10phútquaGoogleMeet/Zoomvới1–2thànhviênđược
+chọnngẫunhiên;ápdụngkhihồsơcódấuhiệubấtthườnghoặcchọnmẫungẫunhiên.
+Sinhviênkhôngtrảlờiđượcvềphầnchínhmìnhphụtráchcóthểbịgiảmhệsố k.
+10.5. Trừ điểm và các trường hợp đặc biệt
+Trường hợp Xử lý
+KhôngnộpmốctiếnđộBuổi7 −0,5điểm
+Nộptrễhạncuối(mỗingày,tốiđa3ngày) −1,0điểm/ngày
+Nộptrễquá3ngày 0điểm(trừtrường
+hợpđượcnhà
+trườnggiảiquyết)
+Thiếuvideohoặcvideokhôngcóphầncủathànhviên Thànhviênđó
+k≤0,7
+KhoGitHubchỉcócommitdồnvàongàycuối;CIkhôngchạyđược Gọivấnđáp;có
+thểgiảmđiểmtiêu
+chí3,4
+Kếtquảmongđợichéptheohànhvihệthống,khôngdẫnchiếuđặctả Giảmđiểmtiêu
+chí2
+DùngAIkhôngkhaibáo;minhchứnggiả;saochép Xửlýtheomục8
+đềcương,cóthể0
+điểm
+11.Liêm chính học thuật và đạo đức kiểm thử
+•Chỉkiểmthửhệthốngnhómcóquyền; khôngtấncông, khônggâyquátảihệthốngcủangười
+khác.
+•Không dùng dữ liệu cá nhân thật; nếu cần dữ liệu giống thật, dùng dữ liệu tổng hợp (Faker,
+Mockaroo)hoặcẩndanhhóa.
+•Báo cáo trung thực: lỗi không tái hiện được thì ghi rõ; không chỉnh sửa ảnh, log để “đẹp” kết
+quả.
+•Tríchdẫnđầyđủmọinguồnthamkhảo,mãnguồnmượn,côngcụAIđãdùng.
+16
+===== TRANG 18 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+•Mọithànhviênchịutráchnhiệmchungvềtoànbộsảnphẩmnộp.
+12.Câu hỏi thường gặp
+Ứng dụng không có tài liệu yêu cầu thì sao?
+Viếtđặctảgiảđịnhdựatrênhànhvicủabảnchuẩnvàhiểubiếtnghiệpvụ,ghirõlàgiảđịnh. Đây
+cũnglàmộtphầnđượcchấm.
+Không tìm được nhiều lỗi có bị điểm thấp?
+Không. Điểm phụ thuộc vào chất lượng thiết kế, tính hệ thống và minh chứng. Ghi nhận trung
+thực; có thể cài lỗi có chủ đích vào phần mã nhóm tự viết để minh họa kiểm thử hồi quy (ghi rõ
+trongbáocáo).
+Hướng A thì làm hộp trắng thế nào?
+Tựviếtlại2hàmmôphỏngquytắcnghiệpvụcủaứngdụng(vídụtínhtổngtiềngiỏhàng,kiểm
+trahợplệbiểumẫu)rồiphântíchvàviếtkiểmthửđơnvịchochúng.
+Có bắt buộc dùng Java/C# không?
+Không. Có thể dùng Python (pytest), JavaScript/TypeScript (Jest, Vitest, Playwright)… miễn có
+kiểmthửđơnvị,kiểmthửtựđộngvàCI.
+Một thành viên không làm việc thì sao?
+Nhómbáo giảng viênsớm (trước Buổi 7)kèm minh chứng; ghi trung thực trongbảng đóng góp.
+Khôngđểđếnlúcnộpmớibáo.
+Video có bắt buộc lộ mặt không?
+Khôngbắtbuộc;tốithiểuphảicógiọngnóivàtênngườitrìnhbàyhiểnthị.
+Được viết tiểu luận bằng LaTeX không?
+Được,nộpkèmthưmụcmãnguồn .tex.
+17
+===== TRANG 19 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+Phụ lục
+Phụ lục 1. Phiếu đăng ký đề tài
+Mục Nội dung
+Nhómsố/Lớp
+Thànhviên(họtên–
+MSSV–vaitrò)1.
+2.
+3.
+4.
+5.
+Hướngđềtài □A□B□C
+Tênđềtài
+Đốitượngkiểmthử(tên,
+phiênbản,link/nguồn)
+Căncứđượcphépkiểm
+thử□Tựxâydựng □Mãnguồnmởchạycụcbộ □Trangluyện
+tập
+Cácchứcnăngdựkiến
+kiểmthử( ≥4)1. 2. 3. 4.
+Trườngdữliệuápdụng
+EP/BVA
+Quytắcnghiệpvụdùng
+bảngquyếtđịnh/chuyển
+trạngthái
+Hàmdựkiếnphântích
+hộptrắng
+Côngcụdựkiến(unit/
+UI-API/CI/quảnlýlỗi)
+LinkkhoGitHub
+Đềtàidựphòng
+Ý kiến giảng viên □Duyệt □Duyệtcóđiềuchỉnh: .......... □Khôngduyệt
+18
+===== TRANG 20 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+Phụ lục 2. Bảng đóng góp và đánh giá chéo
+a) Bảng đóng góp (cảnhómthốngnhất;tổngcột%=100).
+Thành viên
+(MSSV)Công việc đã làm (bước, sản phẩm,
+commit/issue tiêu biểu)% Xác nhận
+b) Đánh giá chéo (mỗi thành viên nộp riêng, bảo mật): chấm từng bạn còn lại theo thang 1–5 ở
+4tiêuchí–hoànthànhđúnghạn,chấtlượngcôngviệc,tinhthầnhợptác,mứcđộchủđộng;kèm
+1–2câunhậnxét.
+Phụ lục 3. Mẫu phản tư cá nhân (1 trang)
+1.Tôiphụtráchnhữngphầnnào? (liệtkêsảnphẩm,commit/issuetiêubiểu)
+2.Một kỹ thuật kiểm thử tôi đã áp dụng: áp dụng cho yêu cầu nào, vì sao chọn kỹ thuật đó, kết
+quảrasao?
+3.Mộtlỗitôipháthiện: môtả,cáchtáihiện,severity/priorityvàlýdo.
+4.MộtlầnAIgiúptôivàmộtlầnAIsai/thiếu: tôiđãpháthiệnvàxửlýthếnào?
+5.Nếulàmlại,tôisẽthayđổiđiềugì?
+Phụ lục 4. Checklist trước khi nộp
+□Tiểuluậnđủ10phần,địnhdạngđúng,cólinkGitHubvàvideoởbìa
+□Mọiyêucầucó ≥1cakiểmthửtrongmatrậntruyvết
+□CóbảngEP,BVA(ghirõ δ),bảngquyếtđịnh/chuyểntrạngthái
+□Cakiểmthửcódữliệucụthể,kếtquảmongđợikiểmchứngđược,dẫnchiếuyêucầu
+□Hộptrắng: CFG,V(G)tính2cách,đườngcơsở,ảnhđộbaophủ
+□Nhậtkýthựcthicókếtquảthựctế,trạngthái,ngườichạy,ngày
+□Báocáolỗiđủtrường,cóminhchứng;cóítnhất1lầnkiểmthửxácnhận
+□Kiểmthửđơnvị+giaodiện/APIchạyđược;CIcólầnchạyxanhgầnnhất
+□Môtảkiểmthửhồiquytrước/sauthayđổi
+19
+===== TRANG 21 =====
+COMP1307 – Kiểm thử phần mềm cơ bản Hướng dẫn tiểu luận cuối kỳ A.2.6
+□Báocáohoàntất: đánhgiátừngtiêuchíđầura,khuyếnnghị
+□Slide15–25trang,mỗislidecóghichúthuyếtminh,cótênngườiphụtrách
+□Video8–12phút,đủmọithànhviên,códemochạykiểmthử;linkxemđược
+□PhụlụcAIcóítnhất2vídụAIsai/thiếu
+□Bảngđónggóp,đánhgiáchéo,phảntưcánhâncủatừngthànhviên
+□Khôngcómậtkhẩu,khóaAPI,dữliệucánhântrongkhovàtàiliệu
+□Tệpnénđặttênđúngquyđịnh
+Mọi thắc mắc về tiểu luận, liên hệ giảng viên qua LMS của học phần hoặc email (điền email
+giảng viên).
+20

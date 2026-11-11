@@ -1,0 +1,261 @@
+﻿@model VanPhongPhamOnline.Data.HangHoa
+@* Hiển thị lỗi tổng quát nếu có *@
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        Vui lòng kiểm tra lại thông tin. Một số trường bắt buộc chưa được nhập đúng.
+    </div>
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <title>Thêm hàng hóa mới</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        body {
+            background: linear-gradient(120deg, #e3f2fd, #bbdefb);
+            font-family: 'Segoe UI', sans-serif;
+            padding: 40px;
+        }
+
+        .container-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #1976d2;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+
+            .form-control:focus {
+                border-color: #1976d2;
+                box-shadow: 0 0 10px rgba(25, 118, 210, 0.2);
+            }
+
+        .btn-submit {
+            background: linear-gradient(45deg, #42a5f5, #1976d2);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+            .btn-submit:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(25, 118, 210, 0.4);
+                color: white;
+            }
+
+        .back-link {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+            .back-link:hover {
+                color: #0d47a1;
+                text-decoration: none;
+            }
+
+        .text-danger {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .image-upload-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .image-preview {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #1976d2;
+            margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .upload-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(45deg, #42a5f5, #1976d2);
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+            .upload-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(25, 118, 210, 0.4);
+            }
+
+        #imageUpload {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="container-box">
+            <a href="@Url.Action("Index", "QuanLyHangHoa")" class="back-link">← Quay lại danh sách</a>
+
+            <h1>Thêm hàng hóa mới</h1>
+
+            @await Html.PartialAsync("_ToastNotification")
+
+            <form asp-action="Create" asp-controller="QuanLyHangHoa" method="post" enctype="multipart/form-data">
+                <div class="image-upload-section">
+                    <img id="imagePreview" src="~/Hinh/default-product.png" alt="Preview" class="image-preview" />
+                    <br>
+                    <label for="imageUpload" class="upload-btn">📷 Chọn ảnh sản phẩm</label>
+                    <input type="file" id="imageUpload" name="HinhUpload" accept="image/*" onchange="previewImage(this)" />
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="TenHh">Tên hàng hóa <span class="text-danger">*</span></label>
+                            <input asp-for="TenHh" class="form-control" placeholder="Nhập tên hàng hóa" required />
+                            <span asp-validation-for="TenHh" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="MaLoai">Loại hàng hóa <span class="text-danger">*</span></label>
+                            <select asp-for="MaLoai" class="form-control" asp-items="ViewBag.MenuLoai" required>
+                                <option value="">-- Chọn loại --</option>
+                            </select>
+
+                            <span asp-validation-for="MaLoai" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="MaNcc">Nhà cung cấp <span class="text-danger">*</span></label>
+                            <select asp-for="MaNcc" class="form-control" asp-items="ViewBag.NccList" required>
+                                <option value="">-- Chọn nhà cung cấp --</option>
+                            </select>
+                            <span asp-validation-for="MaNcc" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="DonGia">Đơn giá</label>
+                            <input asp-for="DonGia" type="number" step="0.01" class="form-control" placeholder="Nhập đơn giá" />
+                            <span asp-validation-for="DonGia" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    @* <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="GiamGia">Giảm giá (%) <span class="text-danger">*</span></label>
+                            <input asp-for="GiamGia" type="hidden" step="0.01" class="form-control" placeholder="Nhập % giảm giá" required value="0" />
+                            <span asp-validation-for="GiamGia" class="text-danger"></span>
+                        </div>
+                    </div> *@
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="NgaySx">Ngày sản xuất <span class="text-danger">*</span></label>
+                            <input asp-for="NgaySx" type="date" class="form-control" value="@Model.NgaySx.ToString("yyyy-MM-dd")" required />
+                            <span asp-validation-for="NgaySx" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="MoTaDonVi">Mô tả đơn vị</label>
+                            <input asp-for="MoTaDonVi" class="form-control" placeholder="Nhập mô tả đơn vị" />
+                            <span asp-validation-for="MoTaDonVi" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="TenAlias">Tên alias</label>
+                            <input asp-for="TenAlias" class="form-control" placeholder="Nhập tên alias (nếu có)" />
+                            <span asp-validation-for="TenAlias" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="MoTa">Mô tả</label>
+                    <textarea asp-for="MoTa" class="form-control" rows="4" placeholder="Nhập mô tả hàng hóa"></textarea>
+                    <span asp-validation-for="MoTa" class="text-danger"></span>
+                </div>
+
+                @* <div class="form-group">
+                    <label asp-for="SoLanXem">Số lần xem <span class="text-danger">*</span></label>
+                    <input asp-for="SoLanXem" type="hidden" class="form-control" placeholder="Nhập số lần xem" required value="0" />
+                    <span asp-validation-for="SoLanXem" class="text-danger"></span>
+                </div> *@
+
+                <div class="text-center">
+                    <button type="submit" class="btn-submit">Thêm hàng hóa</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+        function previewImage(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('imagePreview').src = e.target.result;
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>

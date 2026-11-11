@@ -1,0 +1,238 @@
+﻿@model IEnumerable<VanPhongPhamOnline.Data.KhachHang>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <title>Quản lý khách hàng</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+    body {
+    background: linear-gradient(135deg, #f0f4f8, #d9e9f7);
+    font-family: 'Segoe UI', sans-serif;
+    padding: 30px;
+    }
+
+    .container-box {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+    color: #1565c0;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    }
+
+    .back-link {
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 18px;
+    display: inline-block;
+    transition: color 0.3s ease;
+    }
+    .back-link:hover {
+    color: #0d47a1;
+    }
+
+    .btn-create {
+    background: linear-gradient(45deg, #42a5f5, #1e88e5);
+    border: none;
+    color: white;
+    padding: 12px 26px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    }
+    .btn-create:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(30, 136, 229, 0.4);
+    color: white;
+    }
+
+    .table {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+    }
+    .table thead th {
+    background: linear-gradient(45deg, #1565c0, #42a5f5);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    }
+    .table tbody td {
+    padding: 14px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    }
+    .table tbody tr:hover {
+    background-color: #f9fbfd;
+    transition: all 0.2s ease;
+    }
+
+    .btn-action {
+    margin: 0 2px;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    }
+    .btn-info {
+    background: linear-gradient(45deg, #29b6f6, #0288d1);
+    color: white;
+    }
+    .btn-warning {
+    background: linear-gradient(45deg, #ffb74d, #fb8c00);
+    color: white;
+    }
+    .btn-danger {
+    background: linear-gradient(45deg, #ef5350, #c62828);
+    color: white;
+    }
+    .btn-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .gender-badge {
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    }
+    .gender-male {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    }
+    .gender-female {
+    background-color: #fce4ec;
+    color: #c2185b;
+    }
+
+    .customer-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #1976d2;
+    }
+
+    /* Search box styling */
+    .input-group {
+    margin-bottom: 20px;
+    max-width: 400px;
+    }
+    .input-group .form-control {
+    border-radius: 25px 0 0 25px;
+    border: 1px solid #90caf9;
+    padding-left: 15px;
+    }
+    .input-group .btn {
+    border-radius: 0 25px 25px 0;
+    background: linear-gradient(45deg, #42a5f5, #1e88e5);
+    color: white;
+    border: none;
+    }
+    .input-group .btn:hover {
+    background: linear-gradient(45deg, #1e88e5, #1565c0);
+    }
+</style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="container-box">
+            <a href="@Url.Action("IndexAdmin", "Admin")" class="back-link">← Quay lại trang Admin</a>
+
+            <h1>Quản lý khách hàng</h1>
+            <form asp-action="Search" asp-controller="QuanLyKhachHang" method="get">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for customers" name="query">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <!-- Include Toast Notification -->
+            @await Html.PartialAsync("_ToastNotification")
+
+            <a href="@Url.Action("Create", "QuanLyKhachHang", new { area = "" })" class="btn-create">
+                + Thêm khách hàng mới
+            </a>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Ảnh</th>
+                            <th>Mã KH</th>
+                            <th>Họ tên</th>
+                            <th>Email</th>
+                            <th>Điện thoại</th>
+                            <th>Giới tính</th>
+                            <th>Ngày sinh</th>
+                            <th>Địa chỉ</th>
+                            <th style="width: 220px; text-align: center;">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td style="text-align: center;">
+                                    @{
+                                        var imageSrc = !string.IsNullOrEmpty(item.HinhKh) ?
+                                        "~/Hinh/KhachHang/" + item.HinhKh :
+                                        "~/Hinh/default-customer.jpg";
+                                    }
+                                    <img src="@Url.Content(imageSrc)" alt="Avatar" class="customer-avatar" />
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.MaKh)</td>
+                                <td>@Html.DisplayFor(modelItem => item.HoTenKh)</td>
+                                <td>@Html.DisplayFor(modelItem => item.EmailKh)</td>
+                                <td>@Html.DisplayFor(modelItem => item.DienThoaiKh)</td>
+                                <td>
+                                    <span class="gender-badge @(item.GioiTinhKh ? "gender-male" : "gender-female")">
+                                        @(item.GioiTinhKh ? "Nam" : "Nữ")
+                                    </span>
+                                </td>
+                                <td>@item.NgaySinhKh.ToString("dd/MM/yyyy")</td>
+                                <td>@Html.DisplayFor(modelItem => item.DiaChiKh)</td>
+                                <td style="text-align: center; white-space: nowrap;">
+                                    <a href="@Url.Action("Details", "QuanLyKhachHang", new { id = item.MaKh })" class="btn-action btn-info">Chi tiết</a>
+                                    <a href="@Url.Action("Edit", "QuanLyKhachHang", new { id = item.MaKh })" class="btn-action btn-warning">Sửa</a>
+                                    <a href="@Url.Action("Delete", "QuanLyKhachHang", new { id = item.MaKh })" class="btn-action btn-danger">Xóa</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
