@@ -14,7 +14,6 @@ Xây dựng bằng ASP.NET Core MVC · Entity Framework Core · SQL Server
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-4-7952B3?logo=bootstrap&logoColor=white)
 ![PayPal](https://img.shields.io/badge/PayPal-Sandbox-00457C?logo=paypal&logoColor=white)
 
-*Dự án môn học, được điểm **9/10***
 
 </div>
 
